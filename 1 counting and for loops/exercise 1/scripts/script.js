@@ -4,18 +4,18 @@
 function submitButton1() {
     
     let startingNumber = document.getElementById('starting-number-1').value;
-    let endingNumber = document.getElementById('ending-number-1').value;
+    let endingNumber = parseInt(document.getElementById('ending-number-1').value);
     let outputBox = document.getElementById('output-1');
 
     let outputString = 'output: ';
 
     if (startingNumber < endingNumber) {
 
-        for (let i = startingNumber; i < endingNumber - 1; i++) {
+        for (let i = startingNumber; i < endingNumber; i++) {
 
             outputString += i + ', ';
         }
-        outputString += endingNumber - 1;
+        outputString += endingNumber;
 
         outputBox.innerText = outputString;
 
@@ -23,8 +23,10 @@ function submitButton1() {
 
         for (let i = startingNumber; i > endingNumber; i--) {
 
-            outputString += ', ' + i;
+            outputString += i + ', ';
         }
+
+        outputString += endingNumber;
 
         outputBox.innerText = outputString;
 
